@@ -15,6 +15,9 @@ const shopRouter = require('./routes/shop');
 // use of bodyParser
 app.use(bodyParser.urlencoded({extended: false}));
 
+// use of static files!
+app.use(express.static(path.join(__dirname,'public')));
+
 app.use('/nextpage', (req, res, next) => {
     res.send('hello this is next page route of our project!');
 });
